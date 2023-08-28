@@ -46,7 +46,7 @@ if not os.path.exists(CERTIFICATES_PATH):
 
 def make_calls():
     get_secret(os.environ.get('API_SECRET'))
-    clients = session.get(migrate_from + endpoint["oauthClients"]["endpoint"]).json()
+    clients = session.get(migrate_from + endpoint["oauthClients"]["endpoint"])
     print(clients)
     spConnections = session.get(migrate_from + endpoint["spConnections"]["endpoint"]).json()
     authPolicies = session.get(migrate_from + endpoint["authPolicies"]["endpoint"]).json()
