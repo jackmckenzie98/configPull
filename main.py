@@ -65,7 +65,7 @@ def make_calls():
     authSessions = session.get(migrate_from +
                                                 endpoint["authSessions"]["endpoint"]).json()
     redirectValidation = session.get(migrate_from +
-                                                endpoint["authenticationPolicyFragments"]["endpoint"]).json()
+                                                endpoint["redirectValidation"]["endpoint"]).json()
     return [clients, spConnections, authPolicies, authenticationPolicyFragments, idpAdapters, passwordCVs, accessTokenManagers, accessTokenMappings,\
         authPolicyContracts, dataStores, keyPairs, OAuthKeys, virtualHosts, authSessions, redirectValidation]
 
