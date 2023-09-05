@@ -1,46 +1,49 @@
 {
-  "oauthClients":
-  {
+  "oauthClients": {
     "endpoint": "/oauth/clients"
   },
-  "idpAdapters":
-  {
+  "idpAdapters": {
     "endpoint": "/idp/adapters"
   },
-  "authPolicies":
-  {
+  "authPolicies": {
     "endpoint": "/authenticationPolicies/default"
   },
-  "authenticationPolicyFragments":
-  {
+  "authenticationPolicyFragments": {
     "endpoint": "/authenticationPolicies/fragments"
   },
-  "spConnections":
-  {
+  "spConnections": {
     "endpoint": "/idp/spConnections"
   },
-  "passwordCredentialValidators":
-  {
+  "passwordCredentialValidators": {
     "endpoint": "/passwordCredentialValidators"
   },
-  "accessTokenManagers":
-  {
-	  "endpoint": "/oauth/accessTokenManagers"
+  "accessTokenManagers": {
+    "endpoint": "/oauth/accessTokenManagers"
   },
-  "accessTokenMappings":
-  {
-	  "endpoint": "/oauth/accessTokenMappings"
+  "accessTokenMappings": {
+    "endpoint": "/oauth/accessTokenMappings"
   },
-  "authPolicyContracts":
-  {
-	  "endpoint": "/authenticationPolicyContracts"
+  "authPolicyContracts": {
+    "endpoint": "/authenticationPolicyContracts"
   },
-  "dataStores":
-  {
-	  "endpoint": "/dataStores"
+  "dataStores": {
+    "endpoint": "/dataStores"
   },
-  "keyPairs":
-  {
+  "keyPairs": {
     "endpoint": "/keyPairs/signing"
+  },
+  "OAuthKeys": {
+    "endpoint": "/keyPairs/oauthOpenIdConnect"
+  },
+  "virtualHosts": {
+    "endpoint": "/virtualHostNames"
+  },
+  "authSessions":
+  {
+    "endpoint": "/session/authenticationSessionPolicies"
+  },
+  "redirectValidation":
+  {
+    "endpoint": "/redirectValidation"
   }
 }

@@ -58,8 +58,16 @@ def make_calls():
     keyPairs = session.get(migrate_from + endpoint["keyPairs"]["endpoint"]).json()
     authenticationPolicyFragments = session.get(migrate_from +
                                                 endpoint["authenticationPolicyFragments"]["endpoint"]).json()
+    OAuthKeys = session.get(migrate_from +
+                                                endpoint["OAuthKeys"]["endpoint"]).json()
+    virtualHosts = session.get(migrate_from +
+                                                endpoint["virtualHosts"]["endpoint"]).json()
+    authSessions = session.get(migrate_from +
+                                                endpoint["authSessions"]["endpoint"]).json()
+    redirectValidation = session.get(migrate_from +
+                                                endpoint["authenticationPolicyFragments"]["endpoint"]).json()
     return [clients, spConnections, authPolicies, authenticationPolicyFragments, idpAdapters, passwordCVs, accessTokenManagers, accessTokenMappings,\
-        authPolicyContracts, dataStores, keyPairs]
+        authPolicyContracts, dataStores, keyPairs, OAuthKeys, virtualHosts, authSessions, redirectValidation]
 
 
 #Format any JSON objects that are not formatted in the same way as the others, with a JSON object that wraps it in "items",
@@ -82,7 +90,7 @@ def format_object(list_deal):
 def write_to_file(list_passed):
     file_names = ["clients", "spConnections", "authPolicies", "authenticationPolicyFragments", "idpAdapters",
                   "passwordCredentialValidators", "accessTokenManagers", "accessTokenMappings", "authPolicyContracts",
-                  "dataStores", "keyPairs"]
+                  "dataStores", "keyPairs", "OAuthKeys", "virtualHosts", "authSessions", "redirectValidation"]
     for name, obj in zip(file_names, list_passed):
         f = open(f"{ARTIFACTS_PATH}/{name}.json", 'w+')
         f.write(json.dumps(obj, indent=3))
